@@ -11,7 +11,7 @@ public class RgTest {
 
     @Test
     public void checkNumero(){
-        String numero = "rua calebao";
+        String numero = "rua x";
         rgTest.setNumero(numero);
         String numeroRetorno = rgTest.getNumero();
 
@@ -20,7 +20,7 @@ public class RgTest {
 
     @Test
     public void checkOrgao(){
-        String orgao = "rua calebao";
+        String orgao = "rua x";
         rgTest.setOrgaoExpedidor(orgao);
         String orgaoRetorno = rgTest.getOrgaoExpedidor();
 
