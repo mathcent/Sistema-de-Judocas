@@ -8,3 +8,6 @@ DER.mwb.beforefix
 bin/org/fpij/jitakyoei/view/gui/*.jfd
 fpij.db
 test.db
+target/
+.DS_Store
+.idea/
