@@ -33,22 +33,22 @@ public class DaoImplTest {
 	public static void setUp(){
 		DatabaseManager.setEnviroment(DatabaseManager.TEST);
 		f1 = new Filiado();
-		f1.setNome("Aécio");
-		f1.setCpf("036.464.453-27");
+		f1.setNome("Aluno");
+		f1.setCpf("012.345.678-90");
 		f1.setDataNascimento(new Date());
 		f1.setDataCadastro(new Date());
 		f1.setId(1332L);
 		
 		endereco = new Endereco();
-		endereco.setBairro("Dirceu");
-		endereco.setCep("64078-213");
-		endereco.setCidade("Teresina");
-		endereco.setEstado("PI");
-		endereco.setRua("Rua Des. Berilo Mota");
+		endereco.setBairro("Bairro");
+		endereco.setCep("01234-567");
+		endereco.setCidade("Cidade");
+		endereco.setEstado("ES");
+		endereco.setRua("Rua da FEI");
 		
 		filiadoProf = new Filiado();
 		filiadoProf.setNome("Professor");
-		filiadoProf.setCpf("036.464.453-27");
+		filiadoProf.setCpf("132.456.789-00");
 		filiadoProf.setDataNascimento(new Date());
 		filiadoProf.setDataCadastro(new Date());
 		filiadoProf.setId(3332L);
@@ -59,8 +59,8 @@ public class DaoImplTest {
 		
 		entidade = new Entidade();
 		entidade.setEndereco(endereco);
-		entidade.setNome("Academia 1");
-		entidade.setTelefone1("(086)1234-5432");
+		entidade.setNome("Entidade");
+		entidade.setTelefone1("(011)1234-5678");
 		
 		aluno = new Aluno();
 		aluno.setFiliado(f1);
@@ -103,10 +103,10 @@ public class DaoImplTest {
 		clearDatabase();
 
 		boolean returnReceived = alunoDao.save(aluno);
-		assertEquals("036.464.453-27", alunoDao.get(aluno).getFiliado().getCpf());
-		assertEquals("Aécio", alunoDao.get(aluno).getFiliado().getNome());
+		assertEquals("012.345.678-90", alunoDao.get(aluno).getFiliado().getCpf());
+		assertEquals("Aluno", alunoDao.get(aluno).getFiliado().getNome());
 		assertEquals("Professor", alunoDao.get(aluno).getProfessor().getFiliado().getNome());
-		assertEquals("Dirceu", alunoDao.get(aluno).getProfessor().getFiliado().getEndereco().getBairro());
+		assertEquals("Bairro", alunoDao.get(aluno).getProfessor().getFiliado().getEndereco().getBairro());
 		assertEquals(true, returnReceived);
 
 	}
@@ -141,14 +141,14 @@ public class DaoImplTest {
 		
 		alunoDao.save(aluno);
 		assertEquals(1, alunoDao.list().size());
-		assertEquals("Aécio", aluno.getFiliado().getNome());
+		assertEquals("Aluno", aluno.getFiliado().getNome());
 		
 		Aluno a1 = alunoDao.get(aluno);
-		a1.getFiliado().setNome("TesteUpdate");
+		a1.getFiliado().setNome("Teste1");
 		alunoDao.save(a1);
 		
 		Aluno a2 = alunoDao.get(a1);
-		assertEquals("TesteUpdate", a2.getFiliado().getNome());
+		assertEquals("Teste1", a2.getFiliado().getNome());
 		assertEquals(1, alunoDao.list().size());
 	}
 
@@ -211,13 +211,13 @@ public class DaoImplTest {
 		alunoDao.save(aluno);
 		
 		Filiado f = new Filiado();
-		f.setNome("Aécio");
+		f.setNome("Aluno");
 		Aluno a = new Aluno();
 		a.setFiliado(f);
 		
 		List<Aluno> result = alunoDao.search(a);
 		assertEquals(1, result.size());
-		assertEquals("036.464.453-27", result.get(0).getFiliado().getCpf());
+		assertEquals("012.345.678-90", result.get(0).getFiliado().getCpf());
 		
 		clearDatabase();
 		assertEquals(0, alunoDao.search(a).size());

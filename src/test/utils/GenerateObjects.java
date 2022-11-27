@@ -20,8 +20,8 @@ public class GenerateObjects {
 
     public static Filiado generateFiliado() {
         Filiado f1 = new Filiado();
-        f1.setNome("Aécio");
-        f1.setCpf("036.464.453-27");
+        f1.setNome("Aluno");
+        f1.setCpf("012.345.678-90");
         f1.setDataNascimento(new Date());
         f1.setDataCadastro(new Date());
         f1.setId(new Random().nextLong());
@@ -32,18 +32,18 @@ public class GenerateObjects {
     public static Entidade generateEntidade() {
         Entidade entidade = new Entidade();
         entidade.setEndereco(GenerateObjects.generateEndereco());
-        entidade.setNome("Academia 1");
-        entidade.setTelefone1("(086)1234-5432");
+        entidade.setNome("Entidade");
+        entidade.setTelefone1("(011)1234-5678");
         return entidade;
     }
 
     public static Endereco generateEndereco() {
         Endereco endereco = new Endereco();
-        endereco.setBairro("Dirceu");
-        endereco.setCep("64078-213");
-        endereco.setCidade("Teresina");
-        endereco.setEstado("PI");
-        endereco.setRua("Rua Des. Berilo Mota");
+        endereco.setBairro("Bairro");
+        endereco.setCep("01234-567");
+        endereco.setCidade("Cidade");
+        endereco.setEstado("ES");
+        endereco.setRua("Rua da FEI");
         return endereco;
     }
 

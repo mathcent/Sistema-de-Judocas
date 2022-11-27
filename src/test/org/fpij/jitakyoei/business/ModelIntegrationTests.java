@@ -21,23 +21,23 @@ public class ModelIntegrationTests {
 	public static void setUp(){
 		DatabaseManager.setEnviroment(DatabaseManager.TEST);
 		filiadoAluno = new Filiado();
-		filiadoAluno.setNome("Aécio");
-		filiadoAluno.setCpf("036.464.453-27");
+		filiadoAluno.setNome("Aluno");
+		filiadoAluno.setCpf("012.345.678-90");
 		filiadoAluno.setDataNascimento(new Date());
 		filiadoAluno.setDataCadastro(new Date());
 		filiadoAluno.setId(1332L);
-		filiadoAluno.setRg(new Rg("5026762-0", "SSP-PI"));
+		filiadoAluno.setRg(new Rg("0123456-7", "SSP-PI"));
 		
 		endereco = new Endereco();
-		endereco.setBairro("Dirceu");
-		endereco.setCep("64078-213");
-		endereco.setCidade("Teresina");
-		endereco.setEstado("PI");
-		endereco.setRua("Rua Des. Berilo Mota");
+		endereco.setBairro("Bairro");
+		endereco.setCep("01234-567");
+		endereco.setCidade("Cidade");
+		endereco.setEstado("ES");
+		endereco.setRua("Rua da FEI");
 		
 		filiadoProf = new Filiado();
 		filiadoProf.setNome("Professor");
-		filiadoProf.setCpf("036.464.453-27");
+		filiadoProf.setCpf("132.456.789-00");
 		filiadoProf.setDataNascimento(new Date());
 		filiadoProf.setDataCadastro(new Date());
 		filiadoProf.setId(3332L);
@@ -48,8 +48,8 @@ public class ModelIntegrationTests {
 		
 		entidade = new Entidade();
 		entidade.setEndereco(endereco);
-		entidade.setNome("Academia 1");
-		entidade.setTelefone1("(086)1234-5432");
+		entidade.setNome("Entidade");
+		entidade.setTelefone1("(011)1234-5678");
 		
 		aluno = new Aluno();
 		aluno.setFiliado(filiadoAluno);
